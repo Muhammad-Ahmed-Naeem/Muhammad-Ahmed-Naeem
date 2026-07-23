@@ -52,9 +52,9 @@ def create_svg(theme):
     ]
 
     skills = [
-        ("C++", 60), ("Python", 80), ("Unreal Engine", 125), ("Node.js", 85), ("Next.js", 85),
-        ("React", 70), ("TypeScript", 110), ("AWS", 60), ("Docker", 80), ("Postgres", 100),
-        ("Tailwind", 90), ("Git", 60), ("Figma", 80)
+        ("C++", 60), ("Python", 80), ("Unreal Engine", 125), ("Godot Engine", 120), ("Blender", 85),
+        ("C#", 50), ("AWS", 60), ("Azure", 75), ("Docker", 80), ("MySQL", 80),
+        ("Git", 60), ("Figma", 80)
     ]
 
     # Generate skills pills
@@ -128,7 +128,7 @@ def create_svg(theme):
         ("> Software Engineer", 240),
         ("> AI Enthusiast", 200),
         ("> Unreal Engine Dev", 260),
-        ("> Full Stack Developer", 280)
+        ("> Game Developer", 220)
     ]
     
     typing_svg = ""
@@ -345,24 +345,18 @@ def create_svg(theme):
             <g opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.2s" fill="freeze" />
                 <animateTransform attributeName="transform" type="translate" values="490, 240; 490, 230" dur="0.5s" begin="1.2s" fill="freeze" />
-                <text x="0" y="0">📍 Location:</text>
-                <text x="110" y="0" fill="{text_primary}">Pakistan</text>
+                <text x="0" y="0">🎓 Education:</text>
+                <text x="110" y="0" fill="{text_primary}">Software Engineering</text>
             </g>
             <g opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.4s" fill="freeze" />
                 <animateTransform attributeName="transform" type="translate" values="490, 275; 490, 265" dur="0.5s" begin="1.4s" fill="freeze" />
-                <text x="0" y="0">🎓 Education:</text>
-                <text x="110" y="0" fill="{text_primary}">Computer Science</text>
+                <text x="0" y="0">🔭 Focus:</text>
+                <text x="110" y="0" fill="{text_primary}">AI, Unreal Engine, Game Dev</text>
             </g>
             <g opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.6s" fill="freeze" />
                 <animateTransform attributeName="transform" type="translate" values="490, 310; 490, 300" dur="0.5s" begin="1.6s" fill="freeze" />
-                <text x="0" y="0">🔭 Focus:</text>
-                <text x="110" y="0" fill="{text_primary}">AI, Cloud &amp; Full Stack</text>
-            </g>
-            <g opacity="0">
-                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.8s" fill="freeze" />
-                <animateTransform attributeName="transform" type="translate" values="490, 345; 490, 335" dur="0.5s" begin="1.8s" fill="freeze" />
                 <text x="0" y="0">🌍 Portfolio:</text>
                 <text x="110" y="0" fill="{text_primary}">github.com/Muhammad-Ahmed-Naeem</text>
             </g>
