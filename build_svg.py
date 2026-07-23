@@ -56,14 +56,14 @@ def create_svg(theme):
     # Generate ASCII SVG
     ascii_svg = ""
     for i, line in enumerate(ascii_portrait):
-        y_pos = 180 + (i * 16)
+        y_pos = 80 + (i * 13)
         line = line.replace(" ", "&#160;")
-        ascii_svg += f'<text x="240" y="{y_pos}" text-anchor="middle" font-family="monospace" font-size="16" fill="url(#asciiGrad)" font-weight="bold" letter-spacing="2">{line}</text>\n'
+        ascii_svg += f'<text x="240" y="{y_pos}" text-anchor="middle" font-family="monospace" font-size="13" fill="url(#asciiGrad)" font-weight="bold" letter-spacing="2">{line}</text>\n'
 
     # Add blinking cursor to ASCII
-    cursor_y = 180 + (len(ascii_portrait) * 16)
+    cursor_y = 80 + (len(ascii_portrait) * 13)
     ascii_svg += f'''
-    <text x="240" y="{cursor_y}" text-anchor="middle" font-family="monospace" font-size="16" fill="url(#asciiGrad)" font-weight="bold">_
+    <text x="240" y="{cursor_y}" text-anchor="middle" font-family="monospace" font-size="13" fill="url(#asciiGrad)" font-weight="bold">_
         <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
     </text>
     '''
@@ -86,9 +86,9 @@ def create_svg(theme):
         socials_svg += f'''
         <g opacity="0">
             <animate attributeName="opacity" values="0;1" dur="0.6s" begin="{soc_delay}s" fill="freeze" />
-            <animateTransform attributeName="transform" type="translate" values="{soc_x}, 420; {soc_x}, 410" dur="0.6s" begin="{soc_delay}s" fill="freeze" />
+            <animateTransform attributeName="transform" type="translate" values="0, 10; 0, 0" dur="0.6s" begin="{soc_delay}s" fill="freeze" />
             <a href="{link}" target="_blank">
-                <g class="icon" transform="translate({soc_x}, 410)">
+                <g class="icon" transform="translate({soc_x}, 340)">
                     <rect x="0" y="0" width="36" height="36" rx="8" fill="rgba(15,23,42,0.1)" stroke="{border}" />
                     <path d="{path}" transform="translate(6, 6) scale(1.0)" fill="{text_secondary}" />
                 </g>
@@ -145,7 +145,7 @@ def create_svg(theme):
         </g>
         '''
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="610" viewBox="0 0 1180 610">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="440" viewBox="0 0 1180 440">
     <defs>
         <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="{glow_colors[0]}" stop-opacity="0.3" />
@@ -202,10 +202,10 @@ def create_svg(theme):
         
         <!-- Clipping paths for rounded corners -->
         <clipPath id="panelClip1">
-            <rect x="40" y="40" width="400" height="530" rx="20" />
+            <rect x="40" y="40" width="400" height="360" rx="20" />
         </clipPath>
         <clipPath id="panelClip2">
-            <rect x="460" y="40" width="680" height="530" rx="20" />
+            <rect x="460" y="40" width="680" height="360" rx="20" />
         </clipPath>
     </defs>
 
@@ -279,11 +279,11 @@ def create_svg(theme):
 
     <!-- Moving Scanline -->
     <rect width="100%" height="2" fill="{accent_2}" opacity="0.15">
-        <animate attributeName="y" values="-10; 620; -10" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-10; 450; -10" dur="6s" repeatCount="indefinite" />
     </rect>
 
     <!-- LEFT PANEL (ASCII Portrait) -->
-    <rect x="40" y="40" width="400" height="530" rx="20" fill="{panel_bg}" stroke="url(#borderGlow)" stroke-width="1.5" />
+    <rect x="40" y="40" width="400" height="360" rx="20" fill="{panel_bg}" stroke="url(#borderGlow)" stroke-width="1.5" />
     <g clip-path="url(#panelClip1)">
         <!-- Inner glass shadow/reflection -->
         <rect x="40" y="40" width="400" height="30" fill="white" opacity="0.03" />
@@ -295,7 +295,7 @@ def create_svg(theme):
     </g>
 
     <!-- RIGHT PANEL (Terminal) -->
-    <rect x="460" y="40" width="680" height="530" rx="20" fill="{panel_bg}" stroke="url(#borderGlow)" stroke-width="1.5" />
+    <rect x="460" y="40" width="680" height="360" rx="20" fill="{panel_bg}" stroke="url(#borderGlow)" stroke-width="1.5" />
     <g clip-path="url(#panelClip2)">
         <!-- Terminal Top Bar -->
         <rect x="460" y="40" width="680" height="40" fill="rgba(0,0,0,0.2)" />
