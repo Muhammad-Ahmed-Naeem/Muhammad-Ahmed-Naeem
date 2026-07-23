@@ -1,3 +1,11 @@
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="light.svg">
+    <img alt="GitHub Profile Hero Banner" src="light.svg" width="100%">
+  </picture>
+</div>
+
 # 💫 About Me:
 🔭 I’m currently working on<br>Building AI-powered applications, Unreal Engine 5 projects, and software that solves real-world problems while growing my software engineering portfolio.<br><br>👯 I’m looking to collaborate on<br>Open-source software, AI applications, Unreal Engine projects, developer tools, and innovative startup ideas.<br><br>🤝 I’m looking for help with<br>Scalable software architecture, AWS Cloud, advanced Unreal Engine development, AI engineering, and open-source contributions.<br><br>🌱 I’m currently learning<br>Software Architecture, C++, Python, Unreal Engine 5, AWS Cloud, Generative AI, and modern software engineering practices.<br><br>💬 Ask me about<br>C++, Python, Unreal Engine 5, AI applications, Git & GitHub, software engineering fundamentals, and full-stack development.<br><br>⚡ Fun fact<br>I love building software at every scale, from AI-powered tools to immersive games in Unreal Engine. I'm always looking for the next challenge to learn from.
 
