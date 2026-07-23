@@ -51,33 +51,7 @@ def create_svg(theme):
         "  ,iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii, "
     ]
 
-    skills = [
-        ("C++", 60), ("Python", 80), ("Unreal Engine", 125), ("Godot Engine", 120), ("Blender", 85),
-        ("C#", 50), ("AWS", 60), ("Azure", 75), ("Docker", 80), ("MySQL", 80),
-        ("Git", 60), ("Figma", 80)
-    ]
-
-    # Generate skills pills
-    pills_svg = ""
-    current_x = 490
-    current_y = 400
-    delay = 1.8
-    for name, width in skills:
-        if current_x + width > 1140:
-            current_x = 490
-            current_y += 42
-        
-        pills_svg += f'''
-        <g opacity="0">
-            <animate attributeName="opacity" values="0;1" dur="0.6s" begin="{delay}s" fill="freeze" />
-            <animateTransform attributeName="transform" type="translate" values="{current_x}, {current_y+15}; {current_x}, {current_y}" dur="0.6s" begin="{delay}s" fill="freeze" />
-            <g class="pill" transform="translate({current_x}, {current_y})">
-                <rect class="pill-bg" x="0" y="0" width="{width}" height="32" rx="16" fill="{panel_bg}" stroke="{border}" stroke-width="1.5" />
-                <text x="{width/2}" y="21" fill="{text_secondary}" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="500">{name}</text>
-            </g>
-        </g>'''
-        current_x += width + 12
-        delay += 0.08
+    # Skills removed as requested
 
     # Generate ASCII SVG
     ascii_svg = ""
@@ -112,9 +86,9 @@ def create_svg(theme):
         socials_svg += f'''
         <g opacity="0">
             <animate attributeName="opacity" values="0;1" dur="0.6s" begin="{soc_delay}s" fill="freeze" />
-            <animateTransform attributeName="transform" type="translate" values="{soc_x}, 530; {soc_x}, 520" dur="0.6s" begin="{soc_delay}s" fill="freeze" />
+            <animateTransform attributeName="transform" type="translate" values="{soc_x}, 420; {soc_x}, 410" dur="0.6s" begin="{soc_delay}s" fill="freeze" />
             <a href="{link}" target="_blank">
-                <g class="icon" transform="translate({soc_x}, 520)">
+                <g class="icon" transform="translate({soc_x}, 410)">
                     <rect x="0" y="0" width="36" height="36" rx="8" fill="rgba(15,23,42,0.1)" stroke="{border}" />
                     <path d="{path}" transform="translate(6, 6) scale(1.0)" fill="{text_secondary}" />
                 </g>
@@ -361,15 +335,6 @@ def create_svg(theme):
                 <text x="110" y="0" fill="{text_primary}">github.com/Muhammad-Ahmed-Naeem</text>
             </g>
         </g>
-
-        <!-- Skills Section -->
-        <g opacity="0">
-            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.0s" fill="freeze" />
-            <text x="490" y="380" fill="{text_primary}" font-family="sans-serif" font-weight="bold" font-size="18" letter-spacing="1">SKILLS &amp; TECHNOLOGIES</text>
-        </g>
-        
-        <!-- Pills -->
-        {pills_svg}
 
         <!-- Social Icons -->
         {socials_svg}
